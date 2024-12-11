@@ -6,12 +6,12 @@ title: External source transform
 classDiagram
     
     class TransformBuilder {
-        - original: any[]
-        - transformed: any[]
+        - originalData: any[]
+        - transformedData: any[]
         + build(): any[]
         + setInitialStation(): void
         + setDepartureStation(): void
-        + setTimestamp(): void
+        + getTransformedData(): any[]
     }
     
     class AWSService {
@@ -22,7 +22,7 @@ classDiagram
         + load(originPath: string, destinationPath: string): void
     }
     
-    class AWSSDK { }
+    class S3SDK { }
     
     class DestinationNotFoundError { }
     
@@ -31,7 +31,7 @@ classDiagram
     class TransformError { }
     
     TransformBuilder --> AWSService
-    AWSService --> AWSSDK
+    AWSService --> S3SDK
     AWSService --> DestinationNotFoundError
     AWSService --> OriginNotFoundError
     TransformBuilder --> TransformError
