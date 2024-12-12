@@ -23,6 +23,11 @@ pipenv install --dev
 fastapi dev
 ```
 
+## API Documentation
+
+FastAPI provides an interactive API documentation based on OpenAPI that can be accessed on the route `/docs`.
+You'll be able to see all the available endpoints and test them there.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
