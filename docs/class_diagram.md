@@ -14,7 +14,7 @@ classDiagram
         + getTransformedData(): any[]
     }
     
-    class AWSService {
+    class S3Service {
         - connectionString: string
         - destinationName: string
         + connect(): void
@@ -30,9 +30,9 @@ classDiagram
     
     class TransformError { }
     
-    TransformBuilder --> AWSService
-    AWSService --> S3SDK
-    AWSService --> DestinationNotFoundError
-    AWSService --> OriginNotFoundError
+    TransformBuilder --> S3Service
+    S3Service --> S3SDK
+    S3Service --> DestinationNotFoundError
+    S3Service --> OriginNotFoundError
     TransformBuilder --> TransformError
 ```
