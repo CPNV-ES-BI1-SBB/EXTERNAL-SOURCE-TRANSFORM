@@ -28,7 +28,7 @@ def get_initial_data_example():
         "lon": 6.370564,
         "lat": 46.712419
       },
-      "track": "8",
+      "track": "81DG",
       "subsequent_stops": [
         {
           "id": "8518452",

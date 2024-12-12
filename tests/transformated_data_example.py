@@ -15,8 +15,8 @@ def transformated_data_example():
         "g": "R",
         "l": "4",
       },
-      "platform": "8",
-      "sector": "024492",
+      "platform": "81",
+      "sector": "DG",
     }
   ]
 }
