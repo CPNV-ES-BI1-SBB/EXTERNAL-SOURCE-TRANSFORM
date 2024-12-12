@@ -1,0 +1,15 @@
+from fastapi import APIRouter
+from app.schemas.requests import TransformRequest
+
+router = APIRouter()
+
+
+@router.post("/transform")
+def transform_objects(request: TransformRequest):
+    """
+    # Description
+
+    Transform objects pulled from the source and return the transformed objects.
+    """
+
+    raise NotImplementedError
