@@ -12,7 +12,15 @@ EXTERNAL-SOURCE-TRANSFORM is a microservice that transforms json data from an ex
 ```python
 pipenv shell
 pipenv install
-python3 app.py
+fastapi run
+```
+
+### Development
+
+```python
+pipenv shell
+pipenv install --dev
+fastapi dev
 ```
 
 ## Contributing
