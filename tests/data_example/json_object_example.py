@@ -1,7 +1,7 @@
 def get_json_object_example():
     return {
-    "type": "json",
-    "raw": '''{
+        "type": "json",
+        "raw": '''{
   "stop": {
     "id": "8501120",
     "name": "Lausanne",
@@ -65,7 +65,7 @@ def get_json_object_example():
       ]
     }
   ],
-  "request": None,
+  "request": null,
   "eof": 1
 }''',
-}
+    }
