@@ -1,9 +1,9 @@
-from app.errors.unable_to_transform_error import UnableToTransformError
+from app.errors.unable_to_process_error import UnableToProcessError
 
 
 class DataTransformBuilder:
-    def __init__(self, data):
-        self._input = data
+    def __init__(self, input: dict):
+        self._input = input
         self._output = {}
 
     def build(self) -> dict:
@@ -20,9 +20,9 @@ class DataTransformBuilder:
             ]
             return self
         except KeyError:
-            raise UnableToTransformError()
+            raise UnableToProcessError()
 
-    def _build_departure(self, connection) -> dict:
+    def _build_departure(self, connection: dict) -> dict:
         try:
             departure = {
                 "departureStationName": self._input["stop"]["name"],
@@ -37,10 +37,10 @@ class DataTransformBuilder:
             departure["platform"], departure["sector"] = self._split_track(connection["track"])
             return departure
         except KeyError:
-            raise UnableToTransformError()
+            raise UnableToProcessError()
 
     @staticmethod
-    def _split_track(track) -> tuple:
+    def _split_track(track: str) -> tuple:
         for index, char in enumerate(track):
             if char.isalpha():
                 return track[:index], track[index:]
