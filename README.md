@@ -90,9 +90,50 @@ The project uses [Gitflow][GitFlow-url]. The branches used are: `main`, `develop
 
 The project uses [PEP8](https://peps.python.org/pep-0008) naming convention.
 
+## Directory Structure
+
+```sh
+┣ app/
+┃ ┣ models/
+┃ ┣ routes/
+┃ ┃ ┣ main.py                       // router root
+┃ ┃ ┣ objects.py                    // route for objects ressource
+┃ ┃ ┗ __init__.py
+┃ ┣ schemas/
+┃ ┃ ┣ requests/                     // API requests validator
+┃ ┃ ┃ ┣ transform_request.py
+┃ ┃ ┃ ┗ __init__.py
+┃ ┃ ┣ responses/                    // API responses validator
+┃ ┃ ┃ ┣ transform_response.py
+┃ ┃ ┃ ┗ __init__.py
+┃ ┃ ┗ __init__.py
+┃ ┣ services/
+┃ ┃ ┗ transform_builder.py
+┃ ┣ main.py
+┃ ┗ __init__.py
+┣ docs/
+┃ ┗ class_diagram.md
+┣ tests/
+┃ ┣ mocks/
+┃ ┃ ┗ s3_service_mock.py
+┃ ┣ initial_data_example.py
+┃ ┣ test_transform_builder.py
+┃ ┗ transformated_data_example.py
+┣ .env
+┣ .gitignore
+┣ LICENSE.txt
+┣ Pipfile
+┣ Pipfile.lock
+┗ README.md
+```
+
 ## License
 
 Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/CPNV-ES-BI1-SBB/EXTERNAL-SOURCE-TRANSFORM/blob/main/LICENSE.txt) for more information.
+
+## Contact
+
+You can contact any member of the team via discord on the class server(SI-T2a).
 
 [Python]: https://img.shields.io/badge/Python%203.12-000000?style=for-the-badge&logo=python&logoColor=white
 [Python-url]: https://www.python.org/
