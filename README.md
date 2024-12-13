@@ -115,9 +115,9 @@ The project uses [PEP8](https://peps.python.org/pep-0008) naming convention.
 ┃ ┗ class_diagram.md
 ┣ tests/
 ┃ ┣ mocks/
-┃ ┃ ┗ s3_service_mock.py
+┃ ┃ ┗ aws_provider_mock.py
 ┃ ┣ initial_data_example.py
-┃ ┣ test_transform_builder.py
+┃ ┣ test_data_transform_builder.py
 ┃ ┗ transformated_data_example.py
 ┣ .env
 ┣ .gitignore
