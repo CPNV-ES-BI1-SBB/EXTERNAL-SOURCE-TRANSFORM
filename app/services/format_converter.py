@@ -1,17 +1,13 @@
 import json
-import xmltodict
 from app.errors import UnknownFormatError
 
 class FormatConverter:
-    def convert(self, stream) -> dict:
-        format_data = self._get_file_format(stream)
-        return getattr(self, f"_convert_{format_data}")(stream['raw'])
+    def convert(self, stream: str, type: str) -> dict:
+        if not self._is_valid_file_format(type): raise UnknownFormatError(f"Unknown format: {type}")
+        return getattr(self, f"_convert_{type}")(stream)
 
-    def _get_file_format(self, stream) -> str:
-        if 'type' in stream and stream['type'] in ['json', 'xml', 'csv']:
-            return stream['type']
-        else:
-            raise UnknownFormatError("Unknown format")
+    def _is_valid_file_format(self, type: str) -> bool:
+        return type in ['json', 'xml', 'csv']
 
-    def _convert_json(self, raw_data) -> dict:
-        return json.loads(raw_data)
+    def _convert_json(self, stream: str) -> dict:
+        return json.loads(stream)

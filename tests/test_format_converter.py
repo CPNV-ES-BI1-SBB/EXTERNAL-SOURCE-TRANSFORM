@@ -13,7 +13,7 @@ class TestFormatConverter:
         converter = FormatConverter()
 
         # WHEN
-        result = converter.convert(data)
+        result = converter.convert(data["raw"], data["type"])
 
         # THEN
         assert result == get_initial_data_example()
@@ -24,7 +24,7 @@ class TestFormatConverter:
         converter = FormatConverter()
 
         # WHEN
-        result = converter.convert(data)
+        result = converter.convert(data["raw"], data["type"])
 
         # THEN
         assert result == get_initial_data_example()
@@ -35,7 +35,7 @@ class TestFormatConverter:
         converter = FormatConverter()
 
         # WHEN
-        result = converter.convert(data)
+        result = converter.convert(data["raw"], data["type"])
 
         # THEN
         assert result == get_initial_data_example()
@@ -47,4 +47,4 @@ class TestFormatConverter:
 
         # WHEN
         with pytest.raises(UnknownFormatError):
-            converter.convert(data)
+            converter.convert(data["raw"], data["type"])
