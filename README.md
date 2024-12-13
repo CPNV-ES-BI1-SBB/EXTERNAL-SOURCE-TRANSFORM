@@ -121,7 +121,7 @@ The project uses [PEP8](https://peps.python.org/pep-0008) naming convention.
 
 ## License
 
-Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/CPNV-ES-BI1-SBB/EXTERNAL-SOURCE-TRANSFORM/blob/main/LICENSE.txt) for more information.
+Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/CPNV-ES-BI1-SBB/EXTERNAL-SOURCE-TRANSFORM/blob/develop/LICENSE.txt) for more information.
 
 ## Contact
 
