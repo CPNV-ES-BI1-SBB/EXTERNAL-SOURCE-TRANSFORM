@@ -1,40 +1,29 @@
 import pytest
 from tests.initial_data_example import get_initial_data_example
 from tests.transformated_data_example import transformated_data_example
-from app.services.transform_builder import TransformBuilder
+from app.services.data_transform_builder import DataTransformBuilder
 
-class TestTransformBuilder:
+class TestDataTransformBuilder:
 
-    def test_transform_builder_set_initial_station_success(self):
+    def test_data_transform_builder_set_initial_station_success(self):
         # GIVEN
         data = get_initial_data_example()
-        builder = TransformBuilder(data)
+        builder = DataTransformBuilder(data)
 
         # WHEN
-        builder.set_initial_station()
+        result = builder.set_initial_station().build()
 
         # THEN
-        assert builder.get_transformed_data()["name"] == transformated_data_example()["name"]
+        assert result["name"] == transformated_data_example()["name"]
 
-    def test_transform_builder_set_departures_station_success(self):
+    def test_data_transform_builder_set_departures_station_success(self):
         # GIVEN
         data = get_initial_data_example()
-        builder = TransformBuilder(data)
+        builder = DataTransformBuilder(data)
 
         # WHEN
-        builder.set_departures_station()
+        result = builder.set_departures().build()
 
         # THEN
-        assert builder.get_transformed_data()["departures"] == transformated_data_example()["departures"]
-
-    def test_transform_builder_build_success(self):
-        # GIVEN
-        data = get_initial_data_example()
-        builder = TransformBuilder(data)
-
-        # WHEN
-        result = builder.build()
-
-        # THEN
-        assert result == transformated_data_example()
+        assert result["departures"] == transformated_data_example()["departures"]
 
