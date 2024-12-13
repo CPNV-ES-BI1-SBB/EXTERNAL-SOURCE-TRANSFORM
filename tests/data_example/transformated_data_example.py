@@ -1,4 +1,4 @@
-def transformated_data_example():
+def get_transformated_data_example():
     return {
   "name": "Lausanne",
   "departures": [
