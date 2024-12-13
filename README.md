@@ -101,29 +101,21 @@ The project uses [PEP8](https://peps.python.org/pep-0008) naming convention.
 ┃ ┃ ┗ __init__.py
 ┃ ┣ schemas/
 ┃ ┃ ┣ requests/                     // API requests validator
-┃ ┃ ┃ ┣ transform_request.py
 ┃ ┃ ┃ ┗ __init__.py
 ┃ ┃ ┣ responses/                    // API responses validator
-┃ ┃ ┃ ┣ transform_response.py
 ┃ ┃ ┃ ┗ __init__.py
 ┃ ┃ ┗ __init__.py
 ┃ ┣ services/
-┃ ┃ ┗ transform_builder.py
 ┃ ┣ main.py
 ┃ ┗ __init__.py
 ┣ docs/
 ┃ ┗ class_diagram.md
 ┣ tests/
-┃ ┣ mocks/
-┃ ┃ ┗ aws_provider_mock.py
-┃ ┣ initial_data_example.py
-┃ ┣ test_data_transform_builder.py
-┃ ┗ transformated_data_example.py
+┃ ┗ mocks/
 ┣ .env
 ┣ .gitignore
 ┣ LICENSE.txt
 ┣ Pipfile
-┣ Pipfile.lock
 ┗ README.md
 ```
 
