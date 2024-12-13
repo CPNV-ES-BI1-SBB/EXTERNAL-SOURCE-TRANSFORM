@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from app.schemas.requests import TransformRequest
 from app.schemas.responses import TransformResponse
+from app.services.data_transform_director import DataTransformDirector
 
 router = APIRouter()
 
@@ -12,4 +13,4 @@ def transform_objects(request: TransformRequest):
 
     Transform objects pulled from the source and return the transformed objects.
     """
-    raise NotImplementedError
+    return DataTransformDirector().clean_station_departures(request.objects_URI)
